@@ -1,39 +1,27 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        nuxt-blog-web
-      </h1>
-      <h2 class="subtitle">
-        My slick Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <ul class="container list-post">
+    <li
+      class="item-post item"
+      v-for="post in data"
+      :key="post.id"
+    >
+      <span class="post-date">{{ post.createAt | formate }}</span>
+      <a class="post-title" :href="`/posts/${post.id}`">{{ post.title }}</a>
+    </li>
+  </ul>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
+import dayjs from 'dayjs'
 export default {
-  components: {
-    Logo
+  filters: {
+    formate(time) {
+      return dayjs(Number(time)).format('YYYY-MM-DD')
+    }
+  },
+  async asyncData({ $axios }) {
+    const { data } = await $axios.get(`http://localhost:3000/api/posts`)
+    return { data: data.data }
   }
 }
 </script>
@@ -42,10 +30,10 @@ export default {
 .container {
   margin: 0 auto;
   min-height: 100vh;
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center; */
 }
 
 .title {
@@ -69,4 +57,86 @@ export default {
 .links {
   padding-top: 15px;
 }
+</style>
+
+<style>
+.container {
+  width: 500px;
+    margin: 40px auto 80px;
+    border-left: 4px solid #f9f9f9;
+}
+.list-post {
+    line-height: 2.8em;
+}
+.item-post .post-date {
+    font-size: 12px;
+    display: inline-block;
+    color: #888;
+}
+.item-post .post-title {
+    font-size: 16px;
+    font-weight: normal;
+    position: relative;
+    display: inline-block;
+    transition-duration: .5s;
+    color: #333;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    max-width: 430px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.item-post .post-title:hover {
+    color: #1abc9c;
+}
+</style>
+
+
+<style>
+body, .smooth-container { scroll-behavior: smooth }
+html,
+body {
+  font-family: PingFangSC-Regular,'Roboto', Verdana, "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  width: 100%;
+}
+html {
+  overflow: hidden;
+  overflow-y: auto;
+}
+code,
+pre,
+samp {
+  font-family: PingFangSC-Regular, 'Roboto', Verdana, "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+    a:hover {
+      text-decoration: none;
+    }
+
+ul {
+  line-height: 1.8em;
+  padding: 0;
+  list-style: none;
+}
+    li {
+      list-style: none;
+    }
+
+.text-center {
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
 </style>
