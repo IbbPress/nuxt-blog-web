@@ -12,7 +12,8 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css' }
     ]
   },
   /*
@@ -23,6 +24,8 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/css/main.css',
+    '@/assets/css/lib.css',
   ],
   /*
   ** Plugins to load before mounting the App
