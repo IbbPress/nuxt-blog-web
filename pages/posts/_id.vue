@@ -14,16 +14,16 @@
         </header>
 
         <div class="article-content">
-          {{ post.content }}
+          <!-- {{ post.content }} -->
+          <div class="content" v-html="md.render(post.content)" />
         </div>
-        <!-- <div class="content" v-html="md.render(post.content)" /> -->
       </article>
     </div>
   </div>
 </template>
 <script>
 import dayjs from 'dayjs'
-// import MarkdownIt from 'markdown-it'
+import MarkdownIt from 'markdown-it'
 export default {
   filters: {
     formate (time) {
@@ -36,7 +36,7 @@ export default {
   },
   data () {
     return {
-      // md: new MarkdownIt()
+      md: new MarkdownIt()
     }
   }
 }
