@@ -1,13 +1,23 @@
 <template>
-  <div>
+  <div class="container">
+    <default-header />
     <nuxt />
   </div>
 </template>
 
+<script>
+import header from './modules/header'
+export default {
+  components: {
+    defaultHeader: header
+  }
+}
+</script>
+
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -51,5 +61,12 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+</style>
+
+<style>
+.container {
+  width: 760px;
+  margin: 0 auto;
 }
 </style>
