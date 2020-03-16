@@ -60,3 +60,7 @@ li {
     overflow-x: hidden;
   }
 }
+
+body {
+  letter-spacing: 1px;
+}

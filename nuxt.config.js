@@ -24,6 +24,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/css/theme/markdownhere.css',
     '@/assets/css/main.css',
     '@/assets/css/lib.css',
   ],
