@@ -1,3 +1,4 @@
+const axios = require('axios')
 
 export default {
   mode: 'universal',
@@ -24,6 +25,7 @@ export default {
   ** Global CSS
   */
   css: [
+    'ant-design-vue/dist/antd.css',
     '@/assets/css/theme/markdownhere.css',
     '@/assets/css/main.css',
     '@/assets/css/lib.css',
@@ -32,6 +34,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/antd-ui'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -77,7 +80,7 @@ export default {
     }
   },
   server: {
-    port: 8000, // default: 3000
+    port: 8888, // default: 3000
     host: '0.0.0.0' // default: localhost,
   }
 }
