@@ -66,7 +66,7 @@ html {
 
 <style>
 .container {
-  width: 760px;
+  width: 1020px;
   margin: 0 auto;
 }
 </style>

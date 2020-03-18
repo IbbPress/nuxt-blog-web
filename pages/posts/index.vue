@@ -1,12 +1,15 @@
 <template>
-  <ul class="post-list">
-    <li v-for="post in data" :key="post.id" class="post-item">
-      <span class="post-date">{{ post.createAt | formate }} » </span>
-      <nuxt-link class="post-title" :to="`/posts/${post.id}`">
-        {{ post.title }}
-      </nuxt-link>
-    </li>
-  </ul>
+  <div class="content">
+    <ul class="post-list">
+      <li v-for="post in data" :key="post.id" class="post-item">
+        <span class="post-date">{{ post.createAt | formate }} » </span>
+        <nuxt-link class="post-title" :to="`/posts/${post.id}`">
+          {{ post.title }}
+        </nuxt-link>
+      </li>
+    </ul>
+    <a-pagination v-show="false" v-model="current" :total="total" @change="onPageChange" />
+  </div>
 </template>
 
 <script>
@@ -19,7 +22,14 @@ export default {
   },
   async asyncData ({ $axios }) {
     const { data } = await $axios.get('/api/posts')
-    return { data: data.data }
+    return {
+      data: data.data,
+      current: data.pageNo,
+      total: data.count
+    }
+  },
+  methods: {
+    onPageChange (page, pageSize) {}
   }
 }
 </script>
@@ -57,10 +67,12 @@ export default {
 .post-list {
   line-height: 2.8em;
   border-left: 4px solid #f9f9f9;
-
+  padding: 0;
+  
   .post-item {
     position: relative;
     padding-left: 20px;
+    list-style: none;
 
     &:hover:before {
       background: #1abc9c;
@@ -97,7 +109,7 @@ export default {
       overflow: hidden;
     }
     .post-title:hover {
-      color: #1abc9c;
+      color: #3eaf7c;
     }
   }
 }

@@ -1,66 +1,116 @@
-a {
-  color: #34495e;
-  text-decoration: none;
+* {
+  box-sizing: border-box;
 }
-body, input, button, select, optgroup, option, textarea, blockquote, dd, dl, figure, form, pre, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
-}
-
-
-
 body,
 .smooth-container {
   scroll-behavior: smooth;
 }
 html,
 body {
-  font-family: PingFangSC-Regular, "Roboto", Verdana, "Open Sans",
-    "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei",
-    "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   width: 100%;
+  letter-spacing: 1px;
 }
 html {
   overflow: hidden;
   overflow-y: auto;
 }
-code,
-pre,
-samp {
-  font-family: PingFangSC-Regular, "Roboto", Verdana, "Open Sans",
-    "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei",
-    "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
-}
-* {
-  box-sizing: border-box;
-}
 a {
+  color: #3eaf7c;
   text-decoration: none;
 }
 a:hover {
   text-decoration: none;
 }
 
+ol,
 ul {
-  line-height: 1.8em;
-  padding: 0;
-  list-style: none;
-}
-li {
-  list-style: none;
+  padding-left: 1.2em;
+  margin: 1em 0;
 }
 
-.text-center {
-  text-align: center;
-}
-@media screen and (max-width: 767px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
+ol,
+p,
+ul {
+  line-height: 1.7;
 }
 
-body {
-  letter-spacing: 1px;
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.65rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #eaecef;
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  padding-top: 1.5rem;
+  margin-bottom: 0;
+  font-family: x-locale-heading-primary, zillaslab, Palatino, Palatino Linotype,
+    x-locale-heading-secondary, "Source Han Serif SC", STZhongsong,
+    Source Han Sans CN, PingFang SC, Myriad Pro, Hiragino Sans GB, SimHei;
+}
+
+p {
+  margin: 1em 0;
+}
+
+small, .sldebar_out ul ul li, .sldebar_out ul ol li, .nocomments, .postmetadata, blockquote, strike {
+  color: #777;
+}
+small {
+  font-size: 75%;
+  line-height: 1.5;
+}
+
+blockquote {
+  background: #eee;
+  background-image: linear-gradient(45deg, aliceblue 25%, transparent 25%, transparent 75%, aliceblue 75%, aliceblue), linear-gradient(45deg, aliceblue 25%, transparent 25%, transparent 75%, aliceblue 75%, aliceblue);
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+  word-break: break-all;
+  font-family: "Lucida Console", Consolas, Monaco;
+  border-left: .3rem solid #dfe2e5;
+  margin: 1rem 0;
+  padding: 0.55rem 0 0.45rem 1rem;
+  color: #666;
+  font-size: 1rem;
+}
+blockquote>p {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  overflow-x: auto;
+  width: 100%;
+  display: table;
+}
+tr {
+  border-top: 1px solid #f2f2f2;
+}
+td, th {
+  border: 1px solid #f2f2f2;
+  padding: .6em 1em;
+}
+th {
+  background: #fafafa;
 }
