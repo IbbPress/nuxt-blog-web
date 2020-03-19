@@ -8,7 +8,6 @@
         </nuxt-link>
       </li>
     </ul>
-    <a-pagination v-show="false" v-model="current" :total="total" @change="onPageChange" />
   </div>
 </template>
 
@@ -21,11 +20,13 @@ export default {
     }
   },
   async asyncData ({ $axios }) {
-    const { data } = await $axios.get('/api/posts')
+    const { data } = await $axios.get('/api/posts', {
+      params: {
+        pageSize: 10000
+      }
+    })
     return {
-      data: data.data,
-      current: data.pageNo,
-      total: data.count
+      data: data.data
     }
   },
   methods: {
@@ -68,7 +69,7 @@ export default {
   line-height: 2.8em;
   border-left: 4px solid #f9f9f9;
   padding: 0;
-  
+
   .post-item {
     position: relative;
     padding-left: 20px;

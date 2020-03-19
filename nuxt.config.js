@@ -13,21 +13,22 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'http://ibb-oss.wencaizhang.com/3828f850662baee990bbdaa479ccad4d.png' },
+      { rel: 'shortcut',   href: 'http://ibb-oss.wencaizhang.com/3828f850662baee990bbdaa479ccad4d.png' },
       { rel: 'stylesheet', href: 'https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' },
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism-tomorrow.min.css' }
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism-tomorrow.min.css' },
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/ant-design-vue@1.4.12/dist/antd.min.css' }
     ]
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#3eaf7c' },
   /*
   ** Global CSS
   */
   css: [
-    'ant-design-vue/dist/antd.css',
+    // 'ant-design-vue/dist/antd.css',
     '@/assets/css/code.less',
     '@/assets/css/main.css',
     '@/assets/css/lib.css',
@@ -38,6 +39,13 @@ export default {
   plugins: [
     '@/plugins/antd-ui',
   ],
+  // build: {
+  //   babel: {
+  //     plugins: [
+  //       ["import", { "libraryName": "antd", "libraryDirectory": "lib", "style": "css" }]
+  //     ]
+  //   }
+  // },
   /*
   ** Nuxt.js dev-modules
   */
@@ -84,5 +92,31 @@ export default {
   server: {
     port: 8888, // default: 3000
     host: '0.0.0.0' // default: localhost,
-  }
+  },
+  optimization: {
+    runtimeChunk: {
+      name: 'manifest'
+    },
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        libs: {
+          name: 'chunk-libs',
+          chunks: 'initial',
+          priority: -10,
+          reuseExistingChunk: false,
+          test: /node_modules\/(.*)\.js/
+        },
+        styles: {
+          name: 'chunk-styles',
+          test: /\.(scss|css)$/,
+          chunks: 'all',
+          minChunks: 1,
+          reuseExistingChunk: true,
+          enforce: true
+        }
+      }
+    }
+  },
+  extractCSS: true, /** 将css单独打包成一个文件，默认的是全部加载到有事业 **/
 }

@@ -8,7 +8,6 @@
           </h1>
           <div class="article-meta">
             <small>
-              <a-icon type="calendar" />
               发布于 {{ post.createAt | formate }}
             </small>
           </div>

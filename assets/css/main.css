@@ -114,3 +114,6 @@ td, th {
 th {
   background: #fafafa;
 }
+tr:hover td{
+  background: #e6f7ff;
+}
