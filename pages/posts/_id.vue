@@ -56,32 +56,35 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="less">
 .content.content-post {
   /* width: 760px; */
   margin: 50px auto;
   /* background-color: rgb(251, 250, 249); */
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-}
-article {
-  padding: 10px 30px 15px 30px;
-  color: #555;
-  font-size: 15px;
-}
 
-.article-meta {
-  padding-top: 5px;
-}
+  &.font-small {
+    font-size: 14px;
+  }
+  &.font-medium {
+    font-size: 16px;
+  }
+  &.font-large {
+    font-size: 18px;
+  }
 
-</style>
-<style>
-.article-content.font-small {
-  font-size: 14px;
-}
-.article-content.font-medium {
-  font-size: 16px;
-}
-.article-content.font-large {
-  font-size: 18px;
+  article {
+    padding: 10px 30px 15px 30px;
+    color: #555;
+    font-size: 15px;
+
+    img {
+      max-width: 100%;
+    }
+    .article-meta {
+      padding-top: 5px;
+    }
+  }
+
 }
 </style>

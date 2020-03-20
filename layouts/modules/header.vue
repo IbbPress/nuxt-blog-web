@@ -17,29 +17,33 @@
   </header>
 </template>
 
-<style>
-.header .site-navbar .menu {
-  display: inline-block;
-  position: relative;
-  padding-left: 0;
-  /* padding-right: 25px; */
-  font-family: Athelas, STHeiti, Microsoft Yahei, serif;
-}
-.header .site-navbar .menu .menu-item {
-  display: inline-block;
-  display: inline-block;
-  vertical-align: middle;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  box-shadow: 0 0 1px transparent;
-  position: relative;
-  overflow: hidden;
-}
-.header .site-navbar .menu .menu-item-link {
-  font-size: 18px;
-}
-.logo {
-  font-size: 48px;
-  font-family: "Chancery", cursive, LiSu, sans-serif;
+<style scoped lang="less">
+.header {
+  .logo {
+    font-size: 48px;
+    font-family: "Chancery", cursive, LiSu, sans-serif;
+  }
+  .site-navbar {
+    .menu {
+      display: inline-block;
+      position: relative;
+      padding-left: 0;
+      font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+
+      .menu-item {
+        display: inline-block;
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        box-shadow: 0 0 1px transparent;
+        position: relative;
+        overflow: hidden;
+        .menu-item-link {
+          font-size: 18px;
+        }
+      }
+    }
+  }
 }
 </style>
