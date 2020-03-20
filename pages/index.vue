@@ -60,7 +60,7 @@ export default {
   layout: 'empty',
   head () {
     return {
-      meta: [
+      link: [
         { rel: 'stylesheet', href: 'https://at.alicdn.com/t/font_1671456_hcboulijfy5.css' }
       ]
     }
