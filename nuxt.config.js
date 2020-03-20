@@ -1,4 +1,5 @@
 const axios = require('axios')
+require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -13,7 +14,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'shortcut',   href: 'http://ibb-oss.wencaizhang.com/3828f850662baee990bbdaa479ccad4d.png' },
+      { rel: 'shortcut icon', type: 'image/x-icon', href: 'http://ibb-oss.wencaizhang.com/3828f850662baee990bbdaa479ccad4d.png' },
       { rel: 'stylesheet', href: 'https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' },
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism-tomorrow.min.css' },
@@ -73,7 +74,7 @@ export default {
   },
   proxy: {
     '/api/': {
-      target: 'http://localhost:3000',
+      target: process.env.BASE_URL || 'http://localhost:3000',
       // pathRewrite: {
       //   '^/api' : '/'
       // }
