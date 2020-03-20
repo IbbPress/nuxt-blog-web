@@ -1,15 +1,18 @@
 <template>
   <div class="container">
     <default-header />
+    <back-top />
     <nuxt />
   </div>
 </template>
 
 <script>
+import BackTop from '../components/BackTop'
 import header from './modules/header'
 export default {
   components: {
-    defaultHeader: header
+    defaultHeader: header,
+    BackTop
   }
 }
 </script>
