@@ -1,6 +1,5 @@
-import Vue from 'vue'
-import { Button, Radio, Pagination } from 'ant-design-vue/lib'
-
-Vue.use(Button)
-Vue.use(Radio)
-Vue.use(Pagination)
+// import Vue from 'vue'
+// import Row from 'ant-design-vue/lib/row'
+// import Col from 'ant-design-vue/lib/Col'
+// Vue.use(Row)
+// Vue.use(Col)
