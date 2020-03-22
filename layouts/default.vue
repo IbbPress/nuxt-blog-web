@@ -1,17 +1,22 @@
 <template>
-  <div class="container">
+  <div class="nuxt-body d-flex flex-column">
     <default-header />
     <back-top />
-    <nuxt />
+    <div class="container flex-auto">
+      <nuxt />
+    </div>
+    <default-footer />
   </div>
 </template>
 
 <script>
 import BackTop from '../components/BackTop'
 import header from './modules/header'
+import footer from './modules/footer'
 export default {
   components: {
     defaultHeader: header,
+    defaultFooter: footer,
     BackTop
   }
 }
@@ -68,6 +73,12 @@ html {
 </style>
 
 <style>
+body {
+  background-color: #e9ecef;
+}
+.nuxt-body {
+  min-height: 100vh;
+}
 .container {
   width: 1020px;
   margin: 0 auto;

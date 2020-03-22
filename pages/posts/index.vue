@@ -36,14 +36,12 @@ export default {
 </script>
 
 <style scoped lang="less">
-.container {
-  width: 760px;
-  margin: 40px auto 80px;
-}
 .post-list {
+  background-color: #fff;
   line-height: 2.8em;
   border-left: 4px solid #f9f9f9;
-  padding: 0;
+  padding: 12px;
+  margin: 0;
 
   .post-item {
     position: relative;

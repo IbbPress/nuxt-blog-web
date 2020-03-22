@@ -58,10 +58,8 @@ export default {
 
 <style scoped lang="less">
 .content.content-post {
-  /* width: 760px; */
-  margin: 50px auto;
-  /* background-color: rgb(251, 250, 249); */
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 
   &.font-small {
     font-size: 14px;
