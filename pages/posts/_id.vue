@@ -13,7 +13,7 @@
           </div>
         </header>
         <div class="article-content" :class="`font-${value}`">
-          <div class="content" v-html="md.render(post.content)" />
+          <div class="content" v-html="$md.render(post.content)" />
         </div>
       </article>
     </div>
@@ -21,8 +21,7 @@
 </template>
 <script>
 import dayjs from 'dayjs'
-import MarkdownIt from 'markdown-it'
-import Prism from 'prismjs'
+import Prism from '~/plugins/prism'
 
 export default {
   filters: {
@@ -36,12 +35,8 @@ export default {
     const { data } = await $axios.get(`/api/posts/${params.id}`)
     return { post: data.data }
   },
-  mounted () {
-    Prism.highlightAll()
-  },
   data () {
     return {
-      md: new MarkdownIt(),
       options: [
         { label: '大', value: 'large' },
         { label: '中', value: 'medium' },
@@ -50,8 +45,19 @@ export default {
       value: 'medium'
     }
   },
+  mounted () {
+    Prism.highlightAll()
+  },
   methods: {
     onChange () {}
+  },
+  head () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism-tomorrow.min.css' }
+      ],
+      title: this.post.title
+    }
   }
 }
 </script>

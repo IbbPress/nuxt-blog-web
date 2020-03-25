@@ -21,8 +21,8 @@ article {
 article {
   pre, pre[class*="language-"] {
     line-height: 1.4;
-    padding: 2.25rem 1.5rem 1.25rem;
-    margin: 0.85rem 0;
+    // padding: 2.25rem 1.5rem 1.25rem;
+    // margin: 0.85rem 0;
     // background-color: $codeBgColor;
     border-radius: 6px;
     overflow: auto;
@@ -128,64 +128,144 @@ div[class*="language-"] {
 //       content ('' + lang)
 pre[class*=language-] {
   position: relative;
-  padding-top: 2rem;
+  // padding-top: 2rem;
 }
-pre[class*=language-]:before {
-  position: absolute;
-  top: 16px;
-  right: 1.5rem;
-  font-size: .75rem;
-  color: hsla(0,0%,100%,.4);
-}
-pre[class~="language-javascript"]:before {
-  content: "js";
-}
+// pre[class*=language-]:before {
+//   position: absolute;
+//   top: 16px;
+//   right: 1.5rem;
+//   font-size: .75rem;
+//   color: hsla(0,0%,100%,.4);
+// }
+// pre[class~="language-javascript"]:before {
+//   content: "js";
+// }
+// pre[class~="language-js"]:before {
+//   content: "js";
+// }
+// pre[class~="language-css"]:before {
+//   content: "css";
+// }
+// pre[class~="language-html"]:before {
+//   content: "html";
+// }
 
-pre[class~="language-typescript"]:before {
-  content: "ts";
-}
+// pre[class~="language-typescript"]:before {
+//   content: "ts";
+// }
 
-pre[class~="language-markup"]:before {
-  content: "html";
-}
+// // pre[class~="language-markup"]:before {
+// //   content: "html";
+// // }
 
-pre[class~="language-markdown"]:before {
-  content: "md";
-}
+// pre[class~="language-markdown"]:before {
+//   content: "md";
+// }
+// pre[class~="language-markdown"]:before {
+//   content: "md";
+// }
 
-pre[class~="language-json"]:before {
-  content: "json";
-}
+// pre[class~="language-md"]:before {
+//   content: "md";
+// }
 
-pre[class~="language-ruby"]:before {
-  content: "rb";
-}
+// pre[class~="language-ruby"]:before {
+//   content: "rb";
+// }
 
-pre[class~="language-python"]:before {
-  content: "py";
-}
+// pre[class~="language-python"]:before {
+//   content: "py";
+// }
 
-pre[class~="language-bash"]:before {
-  content: "sh";
-}
+// pre[class~="language-bash"]:before {
+//   content: "bash";
+// }
 
-pre[class~="language-php"]:before {
-  content: "php";
-}
+// pre[class~="language-shell"]:before {
+//   content: "sh";
+// }
+
+// pre[class~="language-php"]:before {
+//   content: "php";
+// }
+// pre[class~="language-nginx"]:before {
+//   content: "nginx";
+// }
 
 
-pre[class*=language-]:after {
-  position: absolute;
-  top: 16px;
-  left: 1.5rem;
-  content: "";
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background-color: #ff5f56;
-  box-shadow: 18px 0 0 0 #ffbd2e, 36px 0 0 0 #27c93f;
-}
+
 
 code {
   font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;;
+}
+
+
+/*在下载的css最后面添加*/
+
+/*添加修改*/
+.code-toolbar{
+  font-size: 100%;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 0 20px 5px rgba(0,0,0,.4);
+  padding-top: 30px;
+  background-color: #161616;
+  margin: 20px 0 20px 0;
+  // &:hover {
+  //   .toolbar-item span {
+  //     opacity: 1;
+  //   }
+  // }
+  pre {
+    margin: 0!important;
+    max-height: 500px;
+    code {
+      max-height: 500px;
+      overflow-x: auto;
+    }
+  }
+  // 仿 mac 风格左上角红黄绿三个点
+  &:after {
+    position: absolute;
+    top: 10px;
+    left: 1em;
+    content: "";
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #ff5f56;
+    box-shadow: 18px 0 0 0 #ffbd2e, 36px 0 0 0 #27c93f;
+  }
+  .toolbar {
+    padding-right: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .toolbar-item {
+      padding: 0 1px 1px 3px;
+      display: inline-block;
+      span {
+        font-family: 'Ubuntu',sans-serif;
+        font-size: 0.75rem;
+        color: hsla(0, 0%, 100%, 0.4);
+        // opacity: 0;
+        // color: #FFF;
+      }
+      button {
+        // copy-btn
+        background-color: transparent;
+        outline: none;
+        border: none;
+        margin-left: 4px;
+        cursor: pointer;
+      }
+    }
+
+  }
 }
