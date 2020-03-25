@@ -9,7 +9,7 @@
       <h2 id="indexLogo" title="For Future, For Freedom." class="web-font">
         张文才的个人网站
         <a aria-hidden="true" href="/entry/">
-          <img src="http://ibb-oss.wencaizhang.com/3828f850662baee990bbdaa479ccad4d.png" alt="张文才" />
+          <img src="http://ibb-oss.wencaizhang.com/3828f850662baee990bbdaa479ccad4d.png" alt="张文才">
         </a>
       </h2>
       <h3 title="For Future, For Freedom." aria-hidden="true">

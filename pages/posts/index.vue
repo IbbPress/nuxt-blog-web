@@ -38,7 +38,6 @@ export default {
 <style scoped lang="less">
 .post-list {
   background-color: #fff;
-  line-height: 2.8em;
   border-left: 4px solid #f9f9f9;
   padding: 12px;
   margin: 0;
@@ -47,6 +46,7 @@ export default {
     position: relative;
     padding-left: 20px;
     list-style: none;
+    margin-bottom: 1em;
 
     &:hover:before {
       background: #1abc9c;
@@ -85,6 +85,24 @@ export default {
     .post-title:hover {
       color: #3eaf7c;
     }
+  }
+
+  a:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    height: 1px;
+    bottom: 0;
+    left: 51%;
+    right: 51%;
+    background-color: #46bd87;
+    transition-duration: .2s;
+    transition-property: right,left;
+    transition-timing-function: ease-out;
+  }
+  a:hover:before {
+    left: 0;
+    right: 0;
   }
 }
 </style>
