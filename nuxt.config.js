@@ -194,7 +194,7 @@ export default {
   ** Build configuration
   */
   build: {
-    extractCSS: { allChunks: true },    // css 独立打包 link 的形式加载
+    extractCSS: true,    // css 独立打包 link 的形式加载
     publicPath: '/app/_nuxt/', //sample/essays 打包的默认路径为 ‘_nuxt’ 或者可以指定cdn 域名
     maxChunkSize: 360000,
     filenames:{
