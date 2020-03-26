@@ -65,7 +65,8 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/style-resources'
   ],
   /*
   ** Axios module configuration
@@ -186,14 +187,46 @@ export default {
       ],
     ]
   },
+  styleResources: {
+    less: '@/assets/vars/*.less'
+  },
   /*
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
+    extractCSS: { allChunks: true },    // css 独立打包 link 的形式加载
+    publicPath: '/app/_nuxt/', //sample/essays 打包的默认路径为 ‘_nuxt’ 或者可以指定cdn 域名
+    maxChunkSize: 360000,
+    filenames:{
+      app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+      css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+      img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+      font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+      video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+    },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          expansions: {
+            name: 'expansions',
+            test(module) {
+              return /swiper|233333|lozad|marked|favico|amplitude|highlight|prismjs|markdown-it.*/.test(module.context);
+            },
+            chunks: 'initial',
+            priority: 10,
+          },
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true
+          }
+        }
+      }
     }
   },
   server: {
