@@ -67,7 +67,10 @@ h6 {
     x-locale-heading-secondary, "Source Han Serif SC", STZhongsong,
     Source Han Sans CN, PingFang SC, Myriad Pro, Hiragino Sans GB, SimHei;
 }
-
+figure {
+  margin: 0;
+  padding: 0;
+}
 p {
   margin: 1em 0;
 }

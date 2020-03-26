@@ -1,7 +1,12 @@
 <template>
   <div class="nuxt-body d-flex flex-column">
+    <client-only>
+      <figure class="widget">
+        <background />
+        <back-top />
+      </figure>
+    </client-only>
     <default-header />
-    <back-top />
     <div class="container flex-auto">
       <nuxt />
     </div>
@@ -10,14 +15,16 @@
 </template>
 
 <script>
-import BackTop from '../components/BackTop'
+import BackTop from '~/components/widget/BackTop'
+import Background from '~/components/widget/background'
 import header from './modules/header'
 import footer from './modules/footer'
 export default {
   components: {
     defaultHeader: header,
     defaultFooter: footer,
-    BackTop
+    BackTop,
+    Background
   }
 }
 </script>
