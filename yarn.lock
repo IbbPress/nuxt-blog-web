@@ -969,6 +969,12 @@
     consola "^2.11.3"
     defu "^1.0.0"
 
+"@nuxtjs/component-cache@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.npmjs.org/@nuxtjs/component-cache/-/component-cache-1.1.5.tgz#4866cb601a7e6a1387e931bbb929bafeec5981d5"
+  dependencies:
+    lru-cache "^5.1.1"
+
 "@nuxtjs/dotenv@^1.4.0":
   version "1.4.1"
   resolved "https://registry.npmjs.org/@nuxtjs/dotenv/-/dotenv-1.4.1.tgz#dd5abb98e22cc7ae27139d3aa606151034293128"

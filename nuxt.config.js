@@ -15,7 +15,6 @@ export default {
     link: [
       { rel: 'shortcut icon', type: 'image/x-icon', href: 'http://ibb-oss.wencaizhang.com/3828f850662baee990bbdaa479ccad4d.png' },
       { rel: 'stylesheet', href: 'https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' },
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/ant-design-vue@1.4.12/dist/antd.min.css' }
     ]
   },
@@ -66,7 +65,11 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['@nuxtjs/component-cache', {
+      max: 10000,
+      maxAge: 1000 * 60 * 60  // 一小时有效期
+    }]
   ],
   /*
   ** Axios module configuration
