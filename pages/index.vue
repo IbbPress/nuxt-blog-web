@@ -37,9 +37,9 @@
         <font aria-hidden="true">
           /
         </font>
-        <a href="javascript:;" aria-label="查看文才的个人信息">
+        <nuxt-link to="/about">
           关于
-        </a>
+        </nuxt-link>
       </p>
       <p>
         <font aria-hidden="true">

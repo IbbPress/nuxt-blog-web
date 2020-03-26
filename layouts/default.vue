@@ -15,10 +15,10 @@
 </template>
 
 <script>
-import BackTop from '~/components/widget/BackTop'
-import Background from '~/components/widget/background'
 import header from './modules/header'
 import footer from './modules/footer'
+import BackTop from '~/components/widget/BackTop'
+import Background from '~/components/widget/background'
 export default {
   components: {
     defaultHeader: header,
