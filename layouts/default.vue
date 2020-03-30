@@ -85,6 +85,7 @@ body {
 }
 .nuxt-body {
   min-height: 100vh;
+  padding-top: 4rem;
 }
 .container {
   width: 1020px;

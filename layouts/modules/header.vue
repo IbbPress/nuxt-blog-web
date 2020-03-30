@@ -22,9 +22,18 @@
 
 <style scoped lang="less">
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  z-index: 999;
+  background-color: hsla(0,0%,100%,0.6);;
+  user-select: none;
+
   border-top: 2px solid #00965e;
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
-  background-color: #fff!important;
+  // background-color: #fff!important;
   margin-bottom: 1.5rem;
   .container {
     width: 1020px;
