@@ -1,8 +1,8 @@
 <template>
-  <div class="nuxt-body d-flex flex-column">
+  <div id="wrapper" class="nuxt-body d-flex flex-column">
     <client-only>
       <figure class="widget">
-        <background />
+        <!-- <background /> -->
         <back-top />
       </figure>
     </client-only>
@@ -18,13 +18,13 @@
 import header from './modules/header'
 import footer from './modules/footer'
 import BackTop from '~/components/widget/BackTop'
-import Background from '~/components/widget/background'
+// import Background from '~/components/widget/background'
 export default {
   components: {
     defaultHeader: header,
     defaultFooter: footer,
-    BackTop,
-    Background
+    BackTop
+    // Background
   }
 }
 </script>
@@ -84,8 +84,8 @@ body {
   background-color: #e9ecef;
 }
 .nuxt-body {
-  min-height: 100vh;
-  padding-top: 4rem;
+  /* min-height: 100vh;
+  padding-top: 4rem; */
 }
 .container {
   width: 1020px;

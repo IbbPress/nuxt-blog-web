@@ -85,7 +85,7 @@ export default {
 .go-to-top {
   cursor: pointer;
   position: fixed;
-  bottom: 2rem;
+  bottom: 5rem;
   right: 2.5rem;
   width: 2rem;
   color: @accentColor;

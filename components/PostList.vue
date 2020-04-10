@@ -1,14 +1,14 @@
 <template>
-  <div class="content">
-    <ul class="post-list">
-      <li v-for="post in data" :key="post.id" class="post-item">
-        <span class="post-date">{{ post.createAt | formate }} » </span>
-        <nuxt-link class="post-title" :to="`/posts/${post.id}`">
-          {{ post.title }}
-        </nuxt-link>
-      </li>
-    </ul>
-  </div>
+  <ul class="post-list">
+    <li v-for="post in data" :key="post.id" class="post-item">
+      <span class="post-date">
+        {{ post.createAt | formate }} »
+      </span>
+      <nuxt-link class="post-title" :to="`/posts/${post.id}`">
+        {{ post.title }}
+      </nuxt-link>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -59,7 +59,7 @@ export default {
       height: 8px;
       margin-top: -4px;
       margin-left: -4px;
-      content: ' ';
+      content: " ";
       border-radius: 50%;
       background: #ddd;
     }
@@ -96,8 +96,8 @@ export default {
     left: 51%;
     right: 51%;
     background-color: #46bd87;
-    transition-duration: .2s;
-    transition-property: right,left;
+    transition-duration: 0.2s;
+    transition-property: right, left;
     transition-timing-function: ease-out;
   }
   a:hover:before {
