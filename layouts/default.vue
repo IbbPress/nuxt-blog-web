@@ -7,7 +7,7 @@
       </figure>
     </client-only>
 
-    <default-header v-if="showBanner" />
+    <the-header v-if="showBanner" />
 
     <div class="container d-flex flex-auto" style="margin-top: 1rem;">
       <div class="main" style="width: 75%;">
@@ -18,21 +18,21 @@
         <PostToc v-if="isPostPage && showToc" />
       </div>
     </div>
-    <default-footer />
+    <the-footer />
   </div>
 </template>
 
 <script>
-import TheHeader from './modules/TheHeader'
-import footer from './modules/footer'
-import InfoCard from './modules/InfoCard'
-import PostToc from './modules/Toc'
+import TheHeader from '~/components/layout/TheHeader'
+import TheFooter from '~/components/layout/TheFooter'
+import InfoCard from '~/components/layout/InfoCard'
+import PostToc from '~/components/post/PostToc'
 import BackTop from '~/components/widget/BackTop'
 // import Background from '~/components/widget/background'
 export default {
   components: {
-    defaultHeader: TheHeader,
-    defaultFooter: footer,
+    TheHeader,
+    TheFooter,
     BackTop,
     InfoCard,
     PostToc

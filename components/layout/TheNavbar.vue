@@ -65,8 +65,8 @@ export default {
   top: 0;
   width: 100%;
   z-index: 20;
-  height: 3rem;
-  line-height: 3rem;
+  height: 4rem;
+  line-height: 4rem;
   box-sizing: border-box;
   border-bottom: 1px solid #eaecef;
   color: #2c3e50;
