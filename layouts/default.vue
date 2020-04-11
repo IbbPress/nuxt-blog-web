@@ -6,25 +6,46 @@
         <back-top />
       </figure>
     </client-only>
-    <default-header />
-    <div class="container flex-auto">
-      <nuxt />
+
+    <default-header v-if="showBanner" />
+
+    <div class="container d-flex flex-auto" style="margin-top: 1rem;">
+      <div class="main" style="width: 75%;">
+        <nuxt />
+      </div>
+      <div class="aside" style="width: 25%;">
+        <InfoCard />
+        <PostToc v-if="isPostPage" />
+      </div>
     </div>
     <default-footer />
   </div>
 </template>
 
 <script>
-import header from './modules/header'
+import TheHeader from './modules/TheHeader'
 import footer from './modules/footer'
+import InfoCard from './modules/InfoCard'
+import PostToc from './modules/Toc'
 import BackTop from '~/components/widget/BackTop'
 // import Background from '~/components/widget/background'
 export default {
   components: {
-    defaultHeader: header,
+    defaultHeader: TheHeader,
     defaultFooter: footer,
-    BackTop
+    BackTop,
+    InfoCard,
+    PostToc
     // Background
+  },
+  computed: {
+    isPostPage () {
+      const { name } = this.$route
+      return name === 'posts-id'
+    },
+    showBanner () {
+      return true
+    }
   }
 }
 </script>
@@ -87,8 +108,8 @@ body {
   /* min-height: 100vh;
   padding-top: 4rem; */
 }
-.container {
+/* .container {
   width: 1020px;
   margin: 0 auto;
-}
+} */
 </style>

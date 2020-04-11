@@ -1,16 +1,10 @@
 <template>
-  <div class="main-content">
-    <h1>最新文章</h1>
+  <div class="content">
     <ul class="post-list">
       <li v-for="post in list" :key="post.id" class="post-item">
         <span class="post-date">{{ post.createAt | formate }} » </span>
         <nuxt-link class="post-title" :to="`/posts/${post.id}`">
           {{ post.title }}
-        </nuxt-link>
-      </li>
-      <li class="post-item">
-        <nuxt-link class="post-title" to="/posts/">
-          更多文章...
         </nuxt-link>
       </li>
     </ul>
@@ -26,7 +20,9 @@ export default {
     }
   },
   async fetch ({ store, params, $axios }) {
-    const { data } = await $axios.get('/api/posts')
+    const { data } = await $axios.get('/api/posts', {
+      params: { pageSize: 10000 }
+    })
     store.commit('setPostList', data.data)
   },
   // fetch ({ store, params, $axios }) {
@@ -77,12 +73,10 @@ export default {
 </script>
 
 <style scoped lang="less">
-.main-content {
+.post-list {
   padding: 12px;
   margin: 0;
   background-color: #fff;
-}
-.post-list {
 
   .post-item {
     position: relative;

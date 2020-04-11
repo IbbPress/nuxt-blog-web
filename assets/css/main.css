@@ -170,4 +170,29 @@ body {
   background: #fff;
   font: 300 1em / 1.5em 'Merriweather Sans', sans-serif;
   color: #000000;
+  letter-spacing: 3px;
+}
+
+/* 布局类 */
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width:1232px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width:1439px) {
+  .container {
+    width:1024px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding:0 .5rem;
+  }
 }
