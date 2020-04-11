@@ -684,7 +684,6 @@ body {
   box-sizing: border-box;
   width: 100%;
   min-height: 100vh;
-  padding-bottom: 6em;
   background: #f2f3f5;
 }
 

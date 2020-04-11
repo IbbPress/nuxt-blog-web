@@ -85,11 +85,11 @@ export default {
 .go-to-top {
   cursor: pointer;
   position: fixed;
-  bottom: 5rem;
+  bottom: 2.5rem;
   right: 2.5rem;
   width: 2rem;
   color: @accentColor;
-  z-index: 1;
+  z-index: 100;
 }
 
 .go-to-top:hover {

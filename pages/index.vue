@@ -1,6 +1,6 @@
 <template>
   <div class="main-content">
-    <h1>最新文章</h1>
+    <h1 style="text-align: center;font-weight: 500;">最新文章</h1>
     <ul class="post-list">
       <li v-for="post in list" :key="post.id" class="post-item">
         <span class="post-date">{{ post.createAt | formate }} » </span>

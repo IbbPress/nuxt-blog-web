@@ -16,7 +16,7 @@
               </small>
             </template>
             <template v-else>
-              <h1 style="border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 5px;">
+              <h1 style="border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 5px; font-weight: 500;">
                 {{ title }}
               </h1>
               <h3 style="padding: 0; font-weight: 500;">
