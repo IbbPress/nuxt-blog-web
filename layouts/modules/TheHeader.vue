@@ -7,21 +7,23 @@
 
     <TransitionFadeSlide>
       <div class="banner">
-        <div class="center flex-column">
-          <template v-if="isPostPage">
-            <h1>{{ title }}</h1>
-            <small class="post-meta-date" style="margin-top: 5px; color: #fff;">
-              发布于 {{ currPost.createAt | formate }}
-            </small>
-          </template>
-          <template v-else>
-            <h1 style="border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 5px;">
-              {{ title }}
-            </h1>
-            <h3 style="padding: 0; font-weight: 500;">
-              Coding Your Ambition
-            </h3>
-          </template>
+        <div class="container flex-center">
+          <div class="center text-center">
+            <template v-if="isPostPage">
+              <h1>{{ title }}</h1>
+              <small class="post-meta-date" style="margin-top: 5px; color: #fff;">
+                由 张文才 发布于 {{ currPost.createAt | formate }}
+              </small>
+            </template>
+            <template v-else>
+              <h1 style="border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 5px;">
+                {{ title }}
+              </h1>
+              <h3 style="padding: 0; font-weight: 500;">
+                Coding Your Ambition
+              </h3>
+            </template>
+          </div>
         </div>
       </div>
     </TransitionFadeSlide>
@@ -56,7 +58,6 @@ export default {
   components: {
     TheNavbar,
     TransitionFadeSlide
-    // TheHeaderBanner,
   },
   filters: {
     formate (time) {
@@ -130,12 +131,14 @@ export default {
     height: 12rem;
     border-bottom: 1px solid #eaecef;
     color: #fff;
-    .center {
+    .container {
       height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      h1 {
+        padding: 0 .6rem;
+      }
+    }
+    .center {
+      display: inline-block;
       z-index: 19;
       text-align: center;
       transition: all 0.2s ease-in-out;

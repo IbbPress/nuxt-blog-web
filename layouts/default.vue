@@ -15,7 +15,7 @@
       </div>
       <div class="aside" style="width: 25%;">
         <InfoCard />
-        <PostToc v-if="isPostPage" />
+        <PostToc v-if="isPostPage && showToc" />
       </div>
     </div>
     <default-footer />
@@ -45,6 +45,9 @@ export default {
     },
     showBanner () {
       return true
+    },
+    showToc () {
+      return false
     }
   }
 }
