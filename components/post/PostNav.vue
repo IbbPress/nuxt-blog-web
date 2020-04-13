@@ -100,13 +100,13 @@ export default {
 
 .post-nav .post-nav-item:hover .post-nav-teaser .post-nav-icon,
 .post-nav .post-nav-item:focus .post-nav-teaser .post-nav-icon {
-  box-shadow: 0 0 0 25em #36d995;
+  box-shadow: 0 0 0 25em @primary-color;
 }
 
 @media only screen and (max-width: 50em) {
   .post-nav .post-nav-item:hover .post-nav-teaser .post-nav-icon,
   .post-nav .post-nav-item:focus .post-nav-teaser .post-nav-icon {
-    box-shadow: 0 0 0 2px #36d995;
+    box-shadow: 0 0 0 2px @primary-color;
   }
 }
 
@@ -192,7 +192,7 @@ export default {
   text-align: center;
   box-sizing: border-box;
   border-radius: 10em;
-  border: 1px solid #36d995;
+  border: 1px solid @primary-color;
   box-shadow: 0 0 0 0 transparent;
   transition: all ease-out 0.1s;
   background: #f2f3f5;

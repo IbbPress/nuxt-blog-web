@@ -29,7 +29,8 @@
   left: 0;
   bottom: 0;
   line-height: 1.334em;
-  font-size: 0.85em;
+  font-size: 0.75em;
+  font-weight: 400;
   color: #737580;
   z-index: 20;
   transition: all ease-out 0.4s;
@@ -42,6 +43,7 @@
   margin-top: 1.5rem;
   text-align: center;
   border-top: 1px solid #eaecef;
+  border-top: 1px solid #d4e0f1;
   .credits {
     text-align: center;
     // padding: 2em;

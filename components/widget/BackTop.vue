@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@accentColor: #3eaf7c;
+@accentColor: #1890ff;
 .go-to-top {
   cursor: pointer;
   position: fixed;

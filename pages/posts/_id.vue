@@ -113,7 +113,7 @@ export default {
 }
 </style>
 
-<style>
+<style scoped lang="less">
 /* @font-face {
     font-family: 'Merriweather Sans';
     font-style: normal;
@@ -276,7 +276,7 @@ a:focus {
 }
 
 .post-content a {
-  border-bottom: 2px solid #36d995;
+  border-bottom: 2px solid @primary-color;
 }
 
 .post-content a:hover,
@@ -638,7 +638,7 @@ a:focus {
 }
 
 #nprogress .bar {
-  background: #36d995 !important;
+  background: @primary-color !important;
   height: 3px !important;
 }
 
@@ -656,8 +656,8 @@ a:focus {
   width: 4em !important;
   height: 4em !important;
   margin: -4em -4em 0 0 !important;
-  border-top-color: #36d995 !important;
-  border-left-color: #36d995 !important;
+  border-top-color: @primary-color !important;
+  border-left-color: @primary-color !important;
 }
 
 body {
@@ -821,7 +821,7 @@ body {
   width: 110%;
   height: 2em;
   background: #fff;
-  border-bottom: 4px solid #36d995;
+  border-bottom: 4px solid @primary-color;
   box-shadow: 0 0.125em 0.125em rgba(0, 0, 0, 0.1);
   transform: rotate(2.5deg);
   transition: all ease-out 0.2s;
@@ -940,7 +940,7 @@ body {
   left: 0;
   top: 0;
   height: 100%;
-  border-left: 4px solid #36d995;
+  border-left: 4px solid @primary-color;
 }
 
 #menu .menu-list .menu-list-item.menu-list-item-follow {
@@ -1038,7 +1038,7 @@ body {
   font-weight: 400;
   font-size: 0.5em;
   letter-spacing: 1px;
-  background: #36d995;
+  background: @primary-color;
   color: #fff;
   border-radius: 2em;
 }
@@ -1080,7 +1080,7 @@ body {
   margin: -1em auto 1em;
   overflow: hidden;
   border-radius: 3em;
-  border: 2px solid #36d995;
+  border: 2px solid @primary-color;
 }
 
 #header .header-image img {
@@ -1119,7 +1119,7 @@ body {
 
 #header .header-meta span a:hover,
 #header .header-meta span a:focus {
-  border-bottom-color: #36d995;
+  border-bottom-color: @primary-color;
 }
 
 #header .header-meta span i {
@@ -1173,7 +1173,7 @@ body {
   width: 100%;
   left: 0;
   bottom: 0;
-  border-bottom: 4px solid #36d995;
+  border-bottom: 4px solid @primary-color;
 }
 
 .post {
@@ -1211,7 +1211,7 @@ body {
 
 .post .post-meta a:hover,
 .post .post-meta a:focus {
-  border-bottom-color: #36d995;
+  border-bottom-color: @primary-color;
 }
 
 .post .post-title {
@@ -1232,7 +1232,7 @@ body {
   bottom: -0.334em;
   width: 1em;
   margin-bottom: -2px;
-  border-bottom: 4px solid #36d995;
+  border-bottom: 4px solid @primary-color;
 }
 
 .post .post-title a {
@@ -1433,7 +1433,7 @@ body {
   position: relative;
   margin: -2em -2em 0;
   overflow: hidden;
-  background: #36d995;
+  background: @primary-color;
 }
 
 @media only screen and (max-width: 50em) {
@@ -1457,7 +1457,7 @@ body {
   width: 110%;
   height: 4em;
   background: #fff;
-  border-top: 4px solid #36d995;
+  border-top: 4px solid @primary-color;
   box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
   transform: rotate(5deg);
   transition: all ease-out 0.2s;
@@ -1536,7 +1536,7 @@ body {
   padding: 0.286em 0.714em;
   border-radius: 2px;
   color: #fff;
-  background: #36d995;
+  background: @primary-color;
   font-weight: 400;
 }
 
@@ -1757,7 +1757,7 @@ body {
 }
 
 .post-subscribe .post-subscribe-form .post-subscribe-input:focus {
-  border-color: #36d995;
+  border-color: @primary-color;
 }
 
 .post-subscribe .post-subscribe-form .post-subscribe-button {
@@ -1771,7 +1771,7 @@ body {
   font-weight: 500;
   color: #fff;
   font-weight: 400;
-  background: #36d995;
+  background: @primary-color;
   border: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1813,7 +1813,7 @@ body {
   text-decoration: none;
   font-weight: 700;
   color: #363740;
-  border: 1px solid #36d995;
+  border: 1px solid @primary-color;
   transition: all ease-out 0.1s;
   border-radius: 4em;
   z-index: 60;
@@ -1822,7 +1822,7 @@ body {
 .pagination .pagination-item:hover,
 .pagination .pagination-item:focus {
   color: #1f2026;
-  box-shadow: 0 0 0 2px #36d995;
+  box-shadow: 0 0 0 2px @primary-color;
 }
 
 .pagination .pagination-item i {

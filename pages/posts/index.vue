@@ -1,5 +1,8 @@
 <template>
-  <div class="content">
+  <div class="main-content">
+    <h1 style="text-align: center;font-weight: 500;">
+      文章归档
+    </h1>
     <ul class="post-list">
       <li v-for="post in list" :key="post.id" class="post-item">
         <span class="post-date">{{ post.createAt | formate }} » </span>
@@ -73,32 +76,17 @@ export default {
 </script>
 
 <style scoped lang="less">
-.post-list {
+.main-content {
   padding: 12px;
   margin: 0;
   background-color: #fff;
-
+}
+.post-list {
   .post-item {
     position: relative;
-    padding-left: 20px;
-    list-style: none;
+    list-style-type: square;
+    margin-left: 1em;
     margin-bottom: 1em;
-
-    &:hover:before {
-      background: #1abc9c;
-    }
-    &:before {
-      position: absolute;
-      top: 50%;
-      left: -2px;
-      width: 8px;
-      height: 8px;
-      margin-top: -4px;
-      margin-left: -4px;
-      content: ' ';
-      border-radius: 50%;
-      background: #ddd;
-    }
 
     .post-date {
       font-size: 12px;
@@ -119,7 +107,7 @@ export default {
       overflow: hidden;
     }
     .post-title:hover {
-      color: #3eaf7c;
+      color: #1890ff;
     }
   }
 
@@ -131,7 +119,7 @@ export default {
     bottom: 0;
     left: 51%;
     right: 51%;
-    background-color: #46bd87;
+    background-color: #1890ff;
     transition-duration: .2s;
     transition-property: right,left;
     transition-timing-function: ease-out;

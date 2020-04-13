@@ -83,7 +83,7 @@ export default {
       overflow: hidden;
     }
     .post-title:hover {
-      color: #3eaf7c;
+      color: #1890ff;
     }
   }
 
@@ -95,7 +95,7 @@ export default {
     bottom: 0;
     left: 51%;
     right: 51%;
-    background-color: #46bd87;
+    background-color: #1890ff;
     transition-duration: 0.2s;
     transition-property: right, left;
     transition-timing-function: ease-out;
