@@ -1,19 +1,41 @@
 <template>
   <div class="main-content">
-    <h1 style="text-align: center;font-weight: 500;">最新文章</h1>
-    <ul class="post-list">
-      <li v-for="post in list" :key="post.id" class="post-item">
-        <span class="post-date">{{ post.createAt | formate }} » </span>
-        <nuxt-link class="post-title" :to="`/posts/${post.id}`">
-          {{ post.title }}
-        </nuxt-link>
-      </li>
-      <li class="post-item">
-        <nuxt-link class="post-title" to="/posts/">
-          更多文章...
-        </nuxt-link>
-      </li>
-    </ul>
+    <h1 style="text-align: center;font-weight: 500;">
+      最新文章
+    </h1>
+    <div class="post-list">
+      <div v-for="post in list" :key="post.id" class="post-item">
+        <p class="post-title">
+          <nuxt-link class="post-link" :to="`/posts/${post.id}`">
+            {{ post.title }}
+          </nuxt-link>
+        </p>
+        <p class="post-meta">
+          <span class="post-meta-date">
+            <span class="post-date">{{ post.createAt | formate }}</span>
+          </span>
+          <span class="post-meta-tags">
+            <span class="post-date">{{ post.createAt | formate }}</span>
+          </span>
+          <span class="post-meta-categories">
+            <span class="post-date">{{ post.createAt | formate }}</span>
+          </span>
+        </p>
+        <p class="post-summary" v-html="post.summary" />
+        <p class="post-read-more">
+          <nuxt-link class="post-link" :to="`/posts/${post.id}`">
+            阅读全文…
+          </nuxt-link>
+        </p>
+      </div>
+      <div class="post-item">
+        <p class="post-title">
+          <nuxt-link class="post-link" to="/posts/">
+            更多文章...
+          </nuxt-link>
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -86,24 +108,16 @@ export default {
 
   .post-item {
     position: relative;
-    padding-left: 20px;
-    list-style: none;
-    margin-bottom: 1em;
-
-    &:hover:before {
-      background: #1abc9c;
+    padding: 1rem;
+    &:not(:first-child) {
+      border-top: 1px solid #eaecef;
     }
-    &:before {
-      position: absolute;
-      top: 50%;
-      left: -2px;
-      width: 8px;
-      height: 8px;
-      margin-top: -4px;
-      margin-left: -4px;
-      content: ' ';
-      border-radius: 50%;
-      background: #ddd;
+    p {
+      margin-top: 0;
+      margin-bottom: .5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     .post-date {
@@ -112,7 +126,7 @@ export default {
       color: #888;
     }
     .post-title {
-      font-size: 16px;
+      font-size: 1.2rem;
       font-weight: normal;
       position: relative;
       display: inline-block;
@@ -124,8 +138,23 @@ export default {
       white-space: nowrap;
       overflow: hidden;
     }
+    .post-link {
+      position: relative;
+      letter-spacing: 1px;
+    }
+    .post-meta {
+      color: #999;
+      font-size: .8rem;
+      span {
+        display: inline-block;
+        height: 100%;
+      }
+    }
+    .post-summary {
+      font-size: .9rem;
+    }
     .post-title:hover {
-      color: #3eaf7c;
+      color: #1890ff;
     }
   }
 
@@ -137,7 +166,7 @@ export default {
     bottom: 0;
     left: 51%;
     right: 51%;
-    background-color: #46bd87;
+    background-color: #1890ff;
     transition-duration: .2s;
     transition-property: right,left;
     transition-timing-function: ease-out;
