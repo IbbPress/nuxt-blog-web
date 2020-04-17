@@ -1,12 +1,22 @@
+import axios from 'axios'
 require('dotenv').config()
 
 export default {
   mode: 'universal',
+
+  generate: {
+    async routes(callback) {
+      const response = await axios.get('http://api.ibb.wencaizhang.com/api/posts');
+      console.log('response length is: ', response)
+      const routes = response.data.data.map(post => `posts/${post.id}`);
+      callback(null, routes)
+    }
+  },
   /*
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: '文才的编程笔记',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -21,7 +31,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3eaf7c' },
+  loading: { color: '#1890ff' },
   /*
   ** Global CSS
   */
@@ -29,7 +39,7 @@ export default {
     // 'ant-design-vue/dist/antd.css',
     '@/assets/css/code.less',
     '@/assets/css/custom-block.less',
-    '@/assets/css/main.css',
+    '@/assets/css/main.less',
     '@/assets/css/lib.css',
   ],
   /*
@@ -76,7 +86,8 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    proxy: true
+    baseURL: 'http://api.ibb.wencaizhang.com',
+    proxy: true,
   },
   proxy: {
     '/api/': {
