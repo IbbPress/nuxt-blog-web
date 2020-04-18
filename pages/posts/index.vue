@@ -3,25 +3,16 @@
     <h1 style="text-align: center;font-weight: 500;">
       文章归档
     </h1>
-    <ul class="post-list">
-      <li v-for="post in list" :key="post.id" class="post-item">
-        <span class="post-date">{{ post.createAt | formate }} » </span>
-        <nuxt-link class="post-title" :to="`/posts/${post.id}`">
-          {{ post.title }}
-        </nuxt-link>
-      </li>
-    </ul>
+    <div class="post-list">
+      <post-item v-for="post in list" :key="post.id" :post="post || []" />
+    </div>
   </div>
 </template>
 
 <script>
-import dayjs from 'dayjs'
+import PostItem from '~/components/post/Item.vue'
 export default {
-  filters: {
-    formate (time) {
-      return dayjs(Number(time)).format('YYYY-MM-DD')
-    }
-  },
+  components: { PostItem },
   async fetch ({ store, params, $axios }) {
     const { data } = await $axios.get('/api/posts', {
       params: { pageSize: 10000 }

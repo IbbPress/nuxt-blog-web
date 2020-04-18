@@ -244,11 +244,6 @@ export default {
   content: "\f0d5";
 }
 
-body {
-  font: 300 1em / 1.5em "Merriweather Sans", sans-serif;
-  color: #000000;
-}
-
 ::-moz-selection,
 ::-moz-selection {
   color: #222;
