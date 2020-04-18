@@ -15,6 +15,14 @@
           归档
           <div class="mr-hover-effect" />
         </nuxt-link>
+        <nuxt-link class="menu menu-item-link" :class="{ active: routeName === 'tags' }" to="/tags">
+          标签
+          <div class="mr-hover-effect" />
+        </nuxt-link>
+        <nuxt-link class="menu menu-item-link" :class="{ active: routeName === 'categories' }" to="/categories">
+          目录
+          <div class="mr-hover-effect" />
+        </nuxt-link>
         <nuxt-link class="menu menu-item-link" :class="{ active: routeName === 'about' }" to="/about">
           关于
           <div class="mr-hover-effect" />
