@@ -72,43 +72,13 @@ export default {
             'https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism-tomorrow.min.css'
         }
       ],
-      title: this.post.title
+      title: this.post.title,
+      meta: [
+        { name: 'description', content: this.post.summary },
+        { name: 'keywords', content: this.post.tags.join(',') },
+        { name: 'author', content: this.post.author }
+      ]
     }
   }
 }
 </script>
-
-<style scoped lang="less">
-// .inner {
-//     max-width: 48em;
-//     margin: 0 auto;
-//     padding: 0 1em;
-// }
-.content.post-content {
-  // box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  // background-color: #fff;
-
-  &.font-small {
-    font-size: 14px;
-  }
-  &.font-medium {
-    font-size: 16px;
-  }
-  &.font-large {
-    font-size: 18px;
-  }
-
-  article {
-    padding: 10px 30px 15px 30px;
-    color: #555;
-    font-size: 15px;
-
-    img {
-      max-width: 100%;
-    }
-    .article-meta {
-      padding-top: 5px;
-    }
-  }
-}
-</style>

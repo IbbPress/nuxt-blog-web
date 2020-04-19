@@ -7,7 +7,6 @@ export default {
   generate: {
     async routes (callback) {
       const response = await axios.get('http://api.ibb.wencaizhang.com/api/posts')
-      console.log('response length is: ', response)
       const routes = response.data.data.map(post => `posts/${post.id}`)
       callback(null, routes)
     }
@@ -20,6 +19,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0,user-scalable=0' },
+      { name: 'generator', content: 'IbbPress' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [

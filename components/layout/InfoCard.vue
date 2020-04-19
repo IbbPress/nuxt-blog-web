@@ -40,7 +40,7 @@
   justify-content: flex-start;
   margin-left: 1rem;
   padding-bottom: 2rem;
-  background-color: hsla(0, 0%, 100%, 0.6);
+  background-color: #fff;
 
   .background {
     display: block;
