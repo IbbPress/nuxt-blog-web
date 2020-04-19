@@ -44,6 +44,7 @@
   text-align: center;
   border-top: 1px solid #eaecef;
   border-top: 1px solid #d4e0f1;
+  letter-spacing: 0;
   .credits {
     text-align: center;
     // padding: 2em;
@@ -52,9 +53,6 @@
   a {
     color: #1e90ff;
     font-weight: 400
-  }
-  p {
-    margin: .5rem 0;
   }
 }
 .loading #footer {

@@ -6,6 +6,7 @@
 
 <style lang="less">
 .ibb-tag {
+  display: inline-block;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -15,7 +16,6 @@
   line-height: 1.5;
   list-style: none;
   font-feature-settings: 'tnum';
-  display: inline-block;
   height: 22px;
   margin-right: 8px;
   padding: 0 7px;

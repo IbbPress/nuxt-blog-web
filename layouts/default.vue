@@ -10,10 +10,10 @@
     <the-header v-if="showBanner" />
 
     <div class="container d-flex flex-auto" style="margin-top: 1rem;">
-      <div class="main" style="width: 75%;">
+      <div class="main">
         <nuxt />
       </div>
-      <div class="aside" style="width: 25%;">
+      <div class="aside">
         <InfoCard />
         <PostToc v-if="isPostPage && showToc" />
       </div>
@@ -103,7 +103,7 @@ html {
 }
 </style>
 
-<style>
+<style lang="less">
 body {
   background-color: #e9ecef;
 }
@@ -115,4 +115,23 @@ body {
   width: 1020px;
   margin: 0 auto;
 } */
+#wrapper {
+  .main {
+    width: 75%;
+  }
+  .aside {
+    width: 25%;
+  }
+}
+@media (max-width: 750px) {
+  #wrapper {
+    .main {
+      width: 100%;
+    }
+    .aside {
+      width: 0;
+      display: none;
+    }
+  }
+}
 </style>

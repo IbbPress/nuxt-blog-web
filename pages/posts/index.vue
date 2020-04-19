@@ -94,7 +94,6 @@ export default {
       vertical-align: middle;
       text-overflow: ellipsis;
       max-width: 430px;
-      white-space: nowrap;
       overflow: hidden;
     }
     .post-title:hover {

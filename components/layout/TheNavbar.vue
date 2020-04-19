@@ -6,34 +6,45 @@
           文才的编程笔记
         </nuxt-link>
       </div>
-      <div class="nav-menu">
-        <nuxt-link class="menu menu-item-link" :class="{ active: routeName == 'index' }" to="/">
-          首页
-          <div class="mr-hover-effect" />
-        </nuxt-link>
-        <nuxt-link class="menu menu-item-link" :class="{ active: routeName === 'posts' }" to="/posts">
-          归档
-          <div class="mr-hover-effect" />
-        </nuxt-link>
-        <nuxt-link class="menu menu-item-link" :class="{ active: routeName === 'tags' }" to="/tags">
-          标签
-          <div class="mr-hover-effect" />
-        </nuxt-link>
-        <nuxt-link class="menu menu-item-link" :class="{ active: routeName === 'categories' }" to="/categories">
-          目录
-          <div class="mr-hover-effect" />
-        </nuxt-link>
-        <nuxt-link class="menu menu-item-link" :class="{ active: routeName === 'about' }" to="/about">
-          关于
-          <div class="mr-hover-effect" />
-        </nuxt-link>
+      <div class="menu-icon" @click="menuOpen = !menuOpen">
+        <i v-show="!menuOpen" class="css-icon z-icon-menu" />
+        <i v-show="menuOpen" class="css-icon z-icon-close" />
       </div>
+      <transition name="a-slide-up">
+        <div v-show="menuOpen" class="nav-menu" @click="menuOpen = !menuOpen">
+          <nuxt-link class="menu menu-item-link" :class="{ active: routeName == 'index' }" to="/">
+            首页
+            <div class="mr-hover-effect" />
+          </nuxt-link>
+          <nuxt-link class="menu menu-item-link" :class="{ active: routeName === 'posts' }" to="/posts">
+            归档
+            <div class="mr-hover-effect" />
+          </nuxt-link>
+          <nuxt-link class="menu menu-item-link" :class="{ active: routeName === 'tags' }" to="/tags">
+            标签
+            <div class="mr-hover-effect" />
+          </nuxt-link>
+          <nuxt-link class="menu menu-item-link" :class="{ active: routeName === 'categories' }" to="/categories">
+            目录
+            <div class="mr-hover-effect" />
+          </nuxt-link>
+          <nuxt-link class="menu menu-item-link" :class="{ active: routeName === 'about' }" to="/about">
+            关于
+            <div class="mr-hover-effect" />
+          </nuxt-link>
+        </div>
+      </transition>
     </div>
   </nav>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      menuOpen: false
+    }
+  },
   computed: {
     routeName () {
       return this.$route.name
@@ -66,6 +77,27 @@ export default {
     box-shadow: 0 -.35em, 0 .35em;
     border-top: 2px solid;
     width: 100%;
+  }
+
+  .menu-icon {
+    padding: 0 1rem;
+  }
+  .z-icon-menu::before {
+    box-shadow: 0 -.35em, 0 .35em;
+    border-top: 2px solid;
+    width: 100%;
+  }
+  .z-icon-close::before {
+    width: 90%;
+    border-top: 2px solid;
+    -ms-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .z-icon-close::after {
+    height: 90%;
+    border-left: 2px solid;
+    -ms-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
   }
 }
 </style>
@@ -129,5 +161,41 @@ export default {
 .menu-item-link:hover .mr-hover-effect {
   opacity: 1!important;
   height: 100%!important;
+}
+
+@media (min-width: 750px) {
+  .menu-icon {
+    display: none!important;
+  }
+  .nav-menu {
+    display: flex!important;
+  }
+}
+@media (max-width: 750px) {
+  #navbar {
+    .nav-menu {
+      position: absolute;
+      top: 64px;
+      left: 0;
+      background-color: #fff;
+      display: block;
+      width: 100%;
+      .menu-item-link {
+        display: block;
+        width: 100%;
+        line-height: normal;
+        padding: .5rem;
+      }
+    }
+  }
+}
+.a-slide-up-enter-active,
+.a-slide-up-leave-active {
+  transition: all .3s ease;
+}
+.a-slide-up-enter,
+.a-slide-up-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 </style>

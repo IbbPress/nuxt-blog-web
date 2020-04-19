@@ -5,10 +5,10 @@ export default {
   mode: 'universal',
 
   generate: {
-    async routes(callback) {
-      const response = await axios.get('http://api.ibb.wencaizhang.com/api/posts');
+    async routes (callback) {
+      const response = await axios.get('http://api.ibb.wencaizhang.com/api/posts')
       console.log('response length is: ', response)
-      const routes = response.data.data.map(post => `posts/${post.id}`);
+      const routes = response.data.data.map(post => `posts/${post.id}`)
       callback(null, routes)
     }
   },
@@ -19,7 +19,7 @@ export default {
     title: '文才的编程笔记',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0,user-scalable=0' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
@@ -40,14 +40,14 @@ export default {
     '@/assets/css/code.less',
     '@/assets/css/custom-block.less',
     '@/assets/css/main.less',
-    '@/assets/css/lib.css',
+    '@/assets/css/lib.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
     '@/plugins/antd-ui',
-    '@/plugins/prism',
+    '@/plugins/prism'
     // '@/components/highlight',
   ],
   // build: {
@@ -78,7 +78,7 @@ export default {
     '@nuxtjs/style-resources',
     ['@nuxtjs/component-cache', {
       max: 10000,
-      maxAge: 1000 * 60 * 60  // 一小时有效期
+      maxAge: 1000 * 60 * 60 // 一小时有效期
     }]
   ],
   /*
@@ -87,11 +87,11 @@ export default {
   */
   axios: {
     baseURL: 'http://api.ibb.wencaizhang.com',
-    proxy: true,
+    proxy: true
   },
   proxy: {
     '/api/': {
-      target: process.env.BASE_URL || 'http://localhost:3000',
+      target: process.env.BASE_URL || 'http://localhost:3000'
       // pathRewrite: {
       //   '^/api' : '/'
       // }
@@ -114,7 +114,7 @@ export default {
           validate (params) {
             return params.trim().match(/^spoiler\s+(.*)$/)
           },
-    
+
           render (tokens, idx) {
             const m = tokens[idx].info.trim().match(/^spoiler\s+(.*)$/)
             if (tokens[idx].nesting === 1) {
@@ -198,7 +198,7 @@ export default {
             }
           }
         }
-      ],
+      ]
     ]
   },
   styleResources: {
@@ -208,10 +208,10 @@ export default {
   ** Build configuration
   */
   build: {
-    extractCSS: true,    // css 独立打包 link 的形式加载
-    publicPath: '/app/_nuxt/', //sample/essays 打包的默认路径为 ‘_nuxt’ 或者可以指定cdn 域名
+    extractCSS: true, // css 独立打包 link 的形式加载
+    publicPath: '/app/_nuxt/', // sample/essays 打包的默认路径为 ‘_nuxt’ 或者可以指定cdn 域名
     maxChunkSize: 360000,
-    filenames:{
+    filenames: {
       app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
       chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
       css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
@@ -224,11 +224,11 @@ export default {
         cacheGroups: {
           expansions: {
             name: 'expansions',
-            test(module) {
-              return /swiper|233333|lozad|marked|favico|amplitude|highlight|prismjs|markdown-it.*/.test(module.context);
+            test (module) {
+              return /swiper|233333|lozad|marked|favico|amplitude|highlight|prismjs|markdown-it.*/.test(module.context)
             },
             chunks: 'initial',
-            priority: 10,
+            priority: 10
           },
           vendors: {
             test: /[\\/]node_modules[\\/]/,
@@ -272,5 +272,5 @@ export default {
       }
     }
   },
-  extractCSS: true, /** 将css单独打包成一个文件，默认的是全部加载到有事业 **/
+  extractCSS: true /** 将css单独打包成一个文件，默认的是全部加载到有事业 **/
 }
