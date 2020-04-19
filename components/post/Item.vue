@@ -1,32 +1,36 @@
 <template>
   <div class="post-item">
     <p class="post-title">
-      <nuxt-link class="post-link" :to="`/posts/${post.id}`">{{ post.title }}</nuxt-link>
+      <nuxt-link class="post-link" :to="`/posts/${post.id}`">
+        {{ post.title }}
+      </nuxt-link>
     </p>
     <p class="post-meta-date">
       <span class="post-date">{{ post.createAt | formate }}</span>
     </p>
     <p class="post-summary" v-html="post.summary" />
     <p class="post-read-more">
-      <nuxt-link class="post-link" :to="`/posts/${post.id}`">阅读全文…</nuxt-link>
+      <nuxt-link class="post-link" :to="`/posts/${post.id}`">
+        阅读全文…
+      </nuxt-link>
     </p>
-    <p class="post-meta">
-      <p v-if="post.tags" class="post-meta-tags">
-        <span>标签：</span>
-        <i-tag class="post-tags" v-for="tag in post.tags" :key="tag">
-          <nuxt-link :to="`/tags/${tag}`">{{ tag }}</nuxt-link>
-        </i-tag>
-      </p>
-      <p v-if="post.categories" class="post-meta-categories">
-        <span>发布在</span>
-        <span class="post-categories">
-          <nuxt-link
-            v-for="cate in post.categories"
-            :key="cate"
-            :to="`/categories/${cate}`"
-          >{{ cate }}</nuxt-link>
-        </span>
-      </p>
+    <p v-if="post.tags" class="post-meta-tags">
+      <span>标签：</span>
+      <i-tag v-for="tag in post.tags" :key="tag" class="post-tags">
+        <nuxt-link :to="`/tags/${tag}`">
+          {{ tag }}
+        </nuxt-link>
+      </i-tag>
+    </p>
+    <p v-if="post.categories" class="post-meta-categories">
+      <span>发布在</span>
+      <span class="post-categories">
+        <nuxt-link
+          v-for="cate in post.categories"
+          :key="cate"
+          :to="`/categories/${cate}`"
+        >{{ cate }}</nuxt-link>
+      </span>
     </p>
   </div>
 </template>

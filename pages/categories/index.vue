@@ -5,9 +5,9 @@
     </h1>
     <div class="cate-list">
       <div
-        class="post-cate"
         v-for="cate in list"
         :key="cate.id"
+        class="post-cate"
       >
         <nuxt-link :to="`/categories/${cate.name}`">
           {{ cate.name }}

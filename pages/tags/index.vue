@@ -5,9 +5,9 @@
     </h1>
     <div class="tag-list">
       <i-tag
-        class="post-tags"
         v-for="tag in tags"
         :key="tag.id"
+        class="post-tags"
       >
         <nuxt-link :to="`/tags/${tag.name}`">
           {{ tag.name }}
