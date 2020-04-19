@@ -2,7 +2,7 @@
   <div id="wrapper" class="nuxt-body d-flex flex-column">
     <client-only>
       <figure class="widget">
-        <!-- <background /> -->
+        <background />
         <back-top />
       </figure>
     </client-only>
@@ -14,10 +14,10 @@
         <nuxt />
       </div>
       <div class="aside">
-        <InfoCard />
-        <PostToc v-if="isPostPage && showToc" />
-        <TagsCard v-if="!isPostPage" />
-        <CategoryCard v-if="!isPostPage" />
+        <info-card />
+        <post-toc v-if="isPostPage && showToc" />
+        <tags-card v-if="!isPostPage" />
+        <category-card v-if="!isPostPage" />
       </div>
     </div>
     <the-footer />
@@ -32,7 +32,7 @@ import TagsCard from '~/components/layout/TagsCard'
 import CategoryCard from '~/components/layout/CategoryCard'
 import PostToc from '~/components/post/Toc'
 import BackTop from '~/components/widget/BackTop'
-// import Background from '~/components/widget/background'
+import Background from '~/components/widget/background'
 export default {
   components: {
     TheHeader,
@@ -41,8 +41,8 @@ export default {
     InfoCard,
     PostToc,
     TagsCard,
-    CategoryCard
-    // Background
+    CategoryCard,
+    Background
   },
   computed: {
     isPostPage () {
@@ -122,6 +122,9 @@ body {
   margin: 0 auto;
 } */
 #wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   .main {
     width: 75%;
   }
