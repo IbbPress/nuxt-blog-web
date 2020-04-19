@@ -17,10 +17,9 @@
         <p>五花马、千金裘，呼儿将出换美酒，与尔同销万古愁。</p>
       </div>
     </div>
-    <div class="about-project">
+    <!-- <div class="about-project">
       <a target="_blank" class="project-link" rel="external nofollow noopener">
         <p class="title">
-          <!-- <i class="iconfont icon-experiment" /> -->
           <span>xxxxx</span>
         </p>
         <p class="description">了解更多关于我的项目的进展</p>
@@ -29,7 +28,7 @@
         <div class="wave" />
         <div class="wave" />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
