@@ -16,6 +16,8 @@
       <div class="aside">
         <InfoCard />
         <PostToc v-if="isPostPage && showToc" />
+        <TagsCard v-if="!isPostPage" />
+        <CategoryCard v-if="!isPostPage" />
       </div>
     </div>
     <the-footer />
@@ -26,7 +28,9 @@
 import TheHeader from '~/components/layout/TheHeader'
 import TheFooter from '~/components/layout/TheFooter'
 import InfoCard from '~/components/layout/InfoCard'
-import PostToc from '~/components/post/PostToc'
+import TagsCard from '~/components/layout/TagsCard'
+import CategoryCard from '~/components/layout/CategoryCard'
+import PostToc from '~/components/post/Toc'
 import BackTop from '~/components/widget/BackTop'
 // import Background from '~/components/widget/background'
 export default {
@@ -35,7 +39,9 @@ export default {
     TheFooter,
     BackTop,
     InfoCard,
-    PostToc
+    PostToc,
+    TagsCard,
+    CategoryCard
     // Background
   },
   computed: {

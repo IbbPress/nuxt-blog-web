@@ -20,51 +20,21 @@
 import PostItem from '~/components/post/Item.vue'
 export default {
   components: { PostItem },
-  async fetch ({ store, params, $axios }) {
-    const { data } = await $axios.get('/api/posts')
-    store.commit('setPostList', data.data)
+  fetch ({ store, params, $axios }) {
+    const posts = $axios.get('/api/posts')
+    const tags = $axios.get('/api/tags')
+    const category = $axios.get('/api/category')
+    return Promise.all([posts, tags, category]).then((values) => {
+      store.commit('setPostList', values[0].data.data)
+      store.commit('setTags', values[1].data)
+      store.commit('setCategory', values[2].data)
+    })
   },
-  // fetch ({ store, params, $axios }) {
-  //   return $axios.get('/api/posts', {
-  //     params: { pageSize: 10000 }
-  //   })
-  //     .then((resp) => {
-  //       // console.log(resp.data)
-  //       store.commit('setPostList', resp.data.data)
-  //     })
-  //   // $axios.get('/api/tags')
-  //   //   .then((resp) => {
-  //   //     console.log(resp.data)
-  //   //     store.commit('setTags', resp.data)
-  //   //   })
-  //   // $axios.get('/api/category')
-  //   //   .then((resp) => {
-  //   //     store.commit('setCategory', resp.data)
-  //   //   })
-  // },
   computed: {
     list () {
       return this.$store.state.postList
-    },
-    tags () {
-      // console.log('this.$store.state.tags: ', this.$store.state.tags)
-      return this.$store.state.tags
-    },
-    category () {
-      return this.$store.state.category
     }
   },
-  // async asyncData ({ $axios }) {
-  //   const { data } = await $axios.get('/api/posts', {
-  //     params: {
-  //       pageSize: 10000
-  //     }
-  //   })
-  //   this.$store.commit('setPostList', data.data)
-  //   return {
-  //     data: data.data
-  //   }
-  // },
   methods: {
     onPageChange (page, pageSize) {}
   }
