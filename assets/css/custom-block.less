@@ -1,56 +1,47 @@
-
-.custom-block {
-  &.tip {
-    background-color: #f3f5f7;
-    border-color: #42b983;
-    font-size: 0.9rem;
-    // text-align: right;
-  }
-}
-
 .custom-block .custom-block-title {
   font-weight: 600;
-  margin-bottom: -.4rem
+  margin-bottom: -.4rem;
+  vertical-align: middle;
 }
 
 .custom-block.danger,.custom-block.tip,.custom-block.warning {
   padding: .1rem 1.5rem;
   border-left-width: .5rem;
   border-left-style: solid;
-  margin: 1rem 0
+  margin: 1rem 0;
 }
 
 .custom-block.tip {
   background-color: #f3f5f7;
-  border-color: #42b983
+  border-color: #42b983;
 }
 
 .custom-block.warning {
   background-color: rgba(255,229,100,.3);
   border-color: #e7c000;
-  color: #6b5900
+  color: #6b5900;
 }
 
 .custom-block.warning .custom-block-title {
-  color: #b29400
+  color: #b29400;
 }
 
 .custom-block.warning a {
-  color: #2c3e50
+  color: #2c3e50;
 }
 
 .custom-block.danger {
   background-color: #ffe6e6;
   border-color: #c00;
-  color: #4d0000
+  color: #4d0000;
 }
 
 .custom-block.danger .custom-block-title {
-  color: #900
+  color: #900;
 }
 
 .custom-block.danger a {
-  color: #2c3e50
+  color: #2c3e50;
 }
 
 .custom-block.details {
@@ -59,85 +50,35 @@
   border-radius: 2px;
   margin: 1.6em 0;
   padding: 1.6em;
-  background-color: #eee
+  background-color: #eee;
 }
 
 .custom-block.details h4 {
-  margin-top: 0
+  margin-top: 0;
 }
 
 .custom-block.details figure:last-child,.custom-block.details p:last-child {
   margin-bottom: 0;
-  padding-bottom: 0
+  padding-bottom: 0;
 }
 
 .custom-block.details summary {
   outline: none;
-  cursor: pointer
+  cursor: pointer;
 }
 
-
-.markdown-it-vue-alter-info {
-  // border: 1px solid #91d5ff;
-  background-color: #e6f7ff;
-  border-color: #42b983;
-}
-.markdown-it-vue-alert-icon-info {
+.block-icon.tip-icon {
   color: #1890ff;
 }
-.markdown-it-vue-alter-success {
-  // border: 1px solid #b7eb8f;
-  background-color: #f6ffed;
-  border-color: #b7eb8f;
-}
-.markdown-it-vue-alert-icon-success {
-  color: #52c41a;
-}
-.markdown-it-vue-alter-error {
-  // border: 1px solid #f5222d;
-  background-color: #fff1f0;
-  border-color: #f5222d;
-}
-.markdown-it-vue-alert-icon-error {
-  color: #f5222d;
-}
-.markdown-it-vue-alter-warning {
-  // border: 1px solid #ffe58f;
-  background-color: #fffbe6;
-  border-color: #ffe58f;
-}
-.markdown-it-vue-alert-icon-warning {
+.block-icon.warning-icon {
   color: #faad14;
 }
-.markdown-it-vue-alter {
-  border-radius: 0;
-  border-left-width: 0.5rem;
-  border-left-style: solid;
-  margin-bottom: 0;
-  display: inline-flex;
-  font-family: 'Chinese Quote', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue',
-    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol';
-  font-size: 14px;
-  font-variant: tabular-nums;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.65);
-  box-sizing: border-box;
-  padding: 0;
-  list-style: none;
-  position: relative;
-  padding: 8px 15px 8px 37px;
-  border-radius: 4px;
-  width: 100%;
-  margin-bottom: 16px;
+.block-icon.danger-icon {
+  color: #f5222d;
 }
-.markdown-it-vue-alter p {
-  margin-bottom: 2px;
+.block-icon {
+  // display: none;
 }
-
-.markdown-it-vue-alert-icon {
-  top: 11.5px;
-  left: 16px;
-  position: absolute;
+.block-icon svg {
+  vertical-align: middle;
 }

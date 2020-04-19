@@ -77,7 +77,4 @@ export default {
   margin: 0;
   background-color: #fff;
 }
-.post-list {
-
-}
 </style>

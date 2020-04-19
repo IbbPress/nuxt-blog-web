@@ -87,12 +87,10 @@ export default {
     color: #333;
     vertical-align: middle;
     text-overflow: ellipsis;
-    max-width: 430px;
     overflow: hidden;
   }
   .post-link {
     position: relative;
-    letter-spacing: 1px;
     &:before {
       content: "";
       position: absolute;

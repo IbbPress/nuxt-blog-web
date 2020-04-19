@@ -29,7 +29,7 @@
   left: 0;
   bottom: 0;
   line-height: 1.334em;
-  font-size: 0.75em;
+  font-size: 0.8em;
   font-weight: 400;
   color: #737580;
   z-index: 20;
@@ -44,7 +44,6 @@
   text-align: center;
   border-top: 1px solid #eaecef;
   border-top: 1px solid #d4e0f1;
-  letter-spacing: 0;
   .credits {
     text-align: center;
     // padding: 2em;
@@ -53,6 +52,9 @@
   a {
     color: #1e90ff;
     font-weight: 400
+  }
+  p {
+    margin: 0;
   }
 }
 .loading #footer {
